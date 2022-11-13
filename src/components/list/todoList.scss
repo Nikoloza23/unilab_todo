@@ -1,0 +1,74 @@
+@use "../../sass/index.scss" as *;
+
+.todo_list_container {
+  @include flex(center, center);
+  flex-direction: $cl;
+  .todo_list_title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font: 600 42px/63px Poppins;
+    font-family: $family;
+  }
+  .todo_pusher {
+    @include flex("", "");
+    input {
+      width: 500px;
+      height: 65px;
+      background: $background;
+      border-radius: $border;
+    }
+    ::placeholder {
+      font-size: 22px;
+    }
+    button {
+      font-size: 32px;
+      padding: 7.5px;
+      background: $background_hv;
+      cursor: $cur;
+    }
+  }
+  .todo_list {
+    margin-top: 30px;
+    .todo_wrapper {
+      padding: 20px;
+      @include flex(center, "");
+      .todo_take {
+        cursor: $cur;
+        &:hover {
+          background: $background_hv;
+        }
+      }
+      .todo_delete {
+        @include flex(center, "");
+        margin-left: 50px;
+        &:hover {
+          background: red;
+          cursor: $cur;
+        }
+      }
+    }
+    li {
+      .todo_name {
+        margin-left: 20px;
+      }
+      background: black;
+      font: normal normal 300 22px/33px Poppins;
+      font-family: $family;
+      margin-bottom: 20px;
+      color: $font_color;
+      width: 570px;
+      height: 45px;
+      border-radius: $border;
+      @include flex(center, space-between);
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  input {
+    width: 290px !important;
+  }
+  li {
+    width: 400px !important;
+  }
+}

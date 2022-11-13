@@ -4,9 +4,9 @@ import group from "../../assets/Group 3.svg";
 
 import "./landing.scss";
 
-const Start = ({ type }) => {
+const Start = () => {
   return (
-    <div className={type === "list" ? "body" : "body::after"}>
+    <div>
       <div className="land_container">
         <div className="img_container">
           <img src={group} alt="" />

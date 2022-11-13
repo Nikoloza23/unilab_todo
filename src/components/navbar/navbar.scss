@@ -3,24 +3,25 @@
 .navbar_container {
   @include flex(center, space-between);
   background: $background_bl;
+  height: 98px;
   h1 {
     color: $font_color;
     font: normal normal 900 36px/55px Poppins;
-    margin-left: 20px;
-    font-family: sans-serif;
+    margin-left: $un_style;
+    font-family: $family;
   }
   .navbar_right_side {
     display: flex;
     div {
       color: $font_color;
       font: normal normal 300 22px/33px Poppins;
-      font-family: sans-serif;
-      margin-top: 20px;
-      margin-right: 20px;
+      font-family: $family;
+      margin-top: $un_style;
+      margin-right: $un_style;
     }
     img {
       width: 68px;
-      background: #e6ebff;
+      background: $background;
       border-radius: 100px;
       height: 68px;
     }
