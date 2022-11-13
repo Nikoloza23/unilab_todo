@@ -73,3 +73,12 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .userContainer {
+    left: 0;
+  }
+  button {
+    width: 150px !important;
+  }
+}

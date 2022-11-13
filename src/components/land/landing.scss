@@ -6,6 +6,10 @@ body {
   padding: 0;
 }
 
+body{
+  background: #fff;
+}
+
 .land_container {
   @include flex(center, center);
   flex-direction: column;
@@ -41,7 +45,7 @@ body {
     font-size: 25px !important;
   }
   button {
-    width: 250px !important;
+    width: 20px !important;
     h1 {
       font-size: 25px !important;
     }
