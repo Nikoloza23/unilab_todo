@@ -1,0 +1,49 @@
+@use "../../sass/index.scss" as *;
+
+body {
+  background: $background_bl;
+  margin: 0;
+  padding: 0;
+}
+
+.land_container {
+  @include flex(center, center);
+  flex-direction: column;
+  img {
+    margin-top: 74px;
+    width: 90px;
+  }
+  .land_title {
+    color: $font_color;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    font-size: 52px;
+  }
+  button {
+    @include flex(center, center);
+    margin-top: 70px;
+    width: 388px;
+    height: 98px;
+    cursor: pointer;
+    background: #5efc8d 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+
+    h1 {
+      color: #000000;
+      font-size: 38px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .land_title {
+    margin-top: 50px;
+    font-size: 25px !important;
+  }
+  button {
+    width: 250px !important;
+    h1 {
+      font-size: 25px !important;
+    }
+  }
+}
