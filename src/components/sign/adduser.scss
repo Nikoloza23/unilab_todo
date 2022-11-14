@@ -59,6 +59,7 @@
         margin-top: 50px;
         font: normal normal 100 32px /20px Poppins;
         cursor: $cur;
+        font-family: $family;
         &:hover {
           background: $background_bl;
           color: $background_wh;
@@ -66,9 +67,6 @@
         }
       }
     }
-  }
-  .uploader {
-    position: absolute;
   }
 }
 

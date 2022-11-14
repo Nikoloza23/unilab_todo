@@ -1,26 +1,26 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 import UserPhoto from "../../assets/add_a_photo_FILL0_wght400_GRAD0_opsz48.svg";
 
 import "./adduser.scss";
 
 const AddUser = () => {
   const [image, setImage] = useState("");
-  const [user, setUser] = useState("");
+  const [enteredName, setEnteredName] = useState("");
 
-  function uploadImage(e) {
-    setImage(e.target.files[0]);
+  const navigate = useNavigate();
+
+  function handleJoin() {
+    if (!image || !enteredName) return;
+
+    localStorage.setItem("joinedUserProfile", image);
+    localStorage.setItem("joinedUsername", enteredName);
+    navigate("/todo");
   }
 
-  function handleApi(e) {
-    const formData = new FormData();
-    formData.append("image", image);
-    axios
-      .post("https://63725dd6025414c6370ddfdc.mockapi.io/todo", formData)
-      .then((res) => {
-        console.log(res);
-      });
+  function uploadImage(e) {
+    setImage(e.target.files[0].name);
   }
 
   return (
@@ -35,22 +35,24 @@ const AddUser = () => {
                 <img src={UserPhoto} alt="" />
               </label>
             </div>
-              <button onClick={handleApi} style={{ display: "none" }}>
-                <input
-                  className="upload_input"
-                  type="file"
-                  name="file"
-                  id="fileInput"
-                  onChange={uploadImage}
-                  style={{ display: "none" }}
-                />
-              </button>
+            <input
+              className="upload_input"
+              type="file"
+              name="file"
+              id="fileInput"
+              onChange={uploadImage}
+              style={{ display: "none" }}
+            />
           </div>
           <div className="input_fill">fill in you name</div>
-          <input className="user_input" type="text" placeholder="your name" />
-          <NavLink to="/todo">
-            <button>Sign In</button>
-          </NavLink>
+          <input
+            value={enteredName}
+            onChange={(e) => setEnteredName(e.target.value)}
+            className="user_input"
+            type="text"
+            placeholder="your name"
+          />
+          <button onClick={handleJoin}>Sign In</button>
         </div>
       </div>
     </div>
