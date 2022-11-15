@@ -13,16 +13,15 @@ const AddUser = () => {
 
   function handleJoin() {
     if (!image || !enteredName) return;
-
     localStorage.setItem("joinedUserProfile", image);
     localStorage.setItem("joinedUsername", enteredName);
     navigate("/todo");
   }
 
   function uploadImage(e) {
-    setImage(e.target.files[0].name);
+    const files = e.target.files[0];
+    setImage(files.name);
   }
-
   return (
     <div className="main_container">
       <div className="userContainer">
@@ -32,7 +31,7 @@ const AddUser = () => {
             <div className="add_photo">add a photo</div>
             <div className="photo_background">
               <label htmlFor="fileInput">
-                <img src={UserPhoto} alt="" />
+                <img src={image ? image : UserPhoto} alt="" />
               </label>
             </div>
             <input

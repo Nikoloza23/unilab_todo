@@ -1,4 +1,4 @@
-import prosta from "../../assets/Group 3.svg";
+import joinedProfile from "../../assets/Group 3.svg";
 import { Navigate } from "react-router";
 
 import "./navbar.scss";
@@ -16,7 +16,7 @@ const Navbar = () => {
       <h1>TO DO</h1>
       <div className="navbar_right_side">
         <div>{userName ? userName : "YourName"}</div>
-        <img src={prosta} alt="" />
+        <img src={joinedProfile} alt="" />
       </div>
     </div>
   );

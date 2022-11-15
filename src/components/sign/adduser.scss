@@ -5,7 +5,7 @@
   height: 100vh;
   @include flex(center, center);
   .userContainer {
-    background: $background_wh 0% 0% no-repeat padding-box;
+    background: $background_wh;
     border-radius: $border;
     width: 450px;
     height: 560px;
@@ -54,7 +54,7 @@
       button {
         width: 230px;
         height: 66px;
-        background: #5efc8d 0% 0% no-repeat padding-box;
+        background: #5efc8d;
         border-radius: $border;
         margin-top: 50px;
         font: normal normal 100 32px /20px Poppins;
