@@ -3,7 +3,7 @@
 .todo_list_container {
   @include flex(center, center);
   flex-direction: $cl;
-  .todo_list_title {
+  .task_title {
     margin-top: 40px;
     margin-bottom: 20px;
     font: 600 42px/63px Poppins;
@@ -19,27 +19,30 @@
     }
     ::placeholder {
       font-size: 22px;
+      position: absolute;
+      left: 30px;
+      top: 20px;
     }
     button {
       font-size: 32px;
-      padding: 7.5px;
+      width: 100px;
       background: $background_hv;
       cursor: $cur;
+      border: $border;
     }
   }
   .todo_list {
     margin-top: 30px;
-
     .todo_wrapper {
       padding: 20px;
       @include flex(center, "");
-      .todo_take {
+      .completed_task {
         cursor: $cur;
         &:hover {
           background: $background_hv;
         }
       }
-      .todo_delete {
+      .delete_task {
         @include flex(center, "");
         margin-left: 50px;
 
@@ -49,20 +52,35 @@
         }
       }
     }
-    li {
-      .todo_name {
+    .li_style {
+      .task_name {
         margin-left: 20px;
       }
       background: black;
-      font: normal normal 300 22px/33px Poppins;
+      font: normal normal 300 25px/33px Poppins;
       font-family: $family;
       margin-bottom: 20px;
       color: $font_color;
-      width: 570px;
-      height: 45px;
+      width: 600px;
+      height: 50px;
       border-radius: $border;
       @include flex(center, space-between);
     }
+  }
+  .completed {
+    background: $background;
+    .task_name {
+      margin-left: 20px;
+    }
+    font: normal normal 300 22px/33px Poppins;
+    font-family: $family;
+    margin-bottom: 20px;
+    color: $font_color;
+    width: 600px;
+    height: 50px;
+    border-radius: $border;
+    color: black;
+    @include flex(center, space-between);
   }
 }
 
@@ -71,6 +89,6 @@
     width: 290px !important;
   }
   li {
-    width: 400px !important;
+    width: 430px !important;
   }
 }
