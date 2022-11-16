@@ -92,3 +92,22 @@
     width: 430px !important;
   }
 }
+
+
+@media (max-width: 1000px) {
+  input {
+    width: 290px !important;
+  }
+  li {
+    width: 430px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  input {
+    width: max-content;
+  }
+  li {
+    width: max-content;
+  }
+}
