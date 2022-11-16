@@ -25,12 +25,12 @@ const TodoList = () => {
 
   const deleteTask = (e, id) => {
     e.preventDefault();
-    setTaskList(taskList.filter((t) => t.id != id));
+    setTaskList(taskList.filter((t) => t.id !== id));
   };
 
   const taskCompleted = (e, id) => {
     e.preventDefault();
-    const element = taskList.findIndex((elem) => elem.id == id);
+    const element = taskList.findIndex((elem) => elem.id === id);
 
     const newTaskList = [...taskList];
 
