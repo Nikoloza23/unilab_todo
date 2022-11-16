@@ -78,3 +78,15 @@
     width: 150px !important;
   }
 }
+
+@media (max-width: 500px) {
+  .userContainer {
+    left: 0;
+  }
+  .userContainer_mini {
+    width: auto;
+  }
+  button {
+    width: 150px !important;
+  }
+}
