@@ -1,9 +1,9 @@
 import TodoPage from "../components/todo/TodoPage";
 
-const Todo = (type) => {
+const Todo = () => {
   return (
     <>
-      <TodoPage type="list" />
+      <TodoPage />
     </>
   );
 };

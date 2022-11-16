@@ -12,7 +12,7 @@ const AddUser = () => {
   const navigate = useNavigate();
 
   function handleJoin() {
-    if (!image || !enteredName) return;
+    if (!image && !enteredName) return;
     localStorage.setItem("joinedUserProfile", image);
     localStorage.setItem("joinedUsername", enteredName);
     navigate("/todo");
@@ -22,6 +22,7 @@ const AddUser = () => {
     const files = e.target.files[0];
     setImage(files.name);
   }
+
   return (
     <div className="main_container">
       <div className="userContainer">

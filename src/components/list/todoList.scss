@@ -29,6 +29,7 @@
   }
   .todo_list {
     margin-top: 30px;
+
     .todo_wrapper {
       padding: 20px;
       @include flex(center, "");
@@ -41,6 +42,7 @@
       .todo_delete {
         @include flex(center, "");
         margin-left: 50px;
+
         &:hover {
           background: red;
           cursor: $cur;

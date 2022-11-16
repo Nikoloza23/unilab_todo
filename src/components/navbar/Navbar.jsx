@@ -7,7 +7,7 @@ const Navbar = () => {
   const userName = localStorage.getItem("joinedUsername");
   const userProfile = localStorage.getItem("joinedUserProfile");
 
-  if (!userName || !userProfile) {
+  if (!userName && !userProfile) {
     return <Navigate to={"/sign"} />;
   }
 
