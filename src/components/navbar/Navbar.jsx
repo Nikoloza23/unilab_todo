@@ -17,7 +17,7 @@ const Navbar = () => {
       <h1>TO DO</h1>
       <div className="navbar_right_side">
         <div>{userName ? userName : "YourName"}</div>
-        <img src={userProfile[Object]} alt="" />
+        <img src={userProfile} alt="" />
       </div>
     </div>
   );

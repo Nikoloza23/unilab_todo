@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 
 import UserPhoto from "../../assets/add_a_photo_FILL0_wght400_GRAD0_opsz48.svg";
 
@@ -13,10 +13,17 @@ const AddUser = () => {
 
   function handleJoin() {
     if (!image && !enteredName) return;
-    localStorage.setItem("joinedUserProfile", image);
+    localStorage.setItem("joinedUserProfile", JSON.stringify(image));
     localStorage.setItem("joinedUsername", enteredName);
     navigate("/todo");
   }
+
+  const handleImage = (e) => {
+    const selectedItem = e.target.files[0];
+    if (selectedItem.size > 5000000) {
+      window.alert("ფოტოს არ უნდა იყოს 5MB_ზე მეტი");
+    } else setImage(selectedItem);
+  };
 
   return (
     <div className="main_container">
@@ -38,16 +45,13 @@ const AddUser = () => {
                 id="fileInput"
                 style={{ display: "none" }}
                 onChange={(e) => {
-                  if (e.target.files[0].size > 5000000) {
-                    window.alert("ფოტოს არ უნდა იყოს 5MB_ზე მეტი");
-                  } else setImage(e.target.files[0]);
-                  console.log(e.target.files[0]);
+                  handleImage(e);
                 }}
               />
             </div>
           ) : (
             <div className="selected_photo">
-              <img src={URL.createObjectURL(image)} alt="not fount" />
+              <img src={URL.createObjectURL(image)} alt="not found" />
             </div>
           )}
           <div className="input_fill">fill in you name</div>
