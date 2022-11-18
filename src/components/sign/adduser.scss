@@ -34,6 +34,15 @@
           }
         }
       }
+      .selected_photo {
+        margin-top: 30px;
+
+        img {
+          border-radius: 100px;
+          width: 200px;
+          height: 120px;
+        }
+      }
       .input_fill {
         margin-top: 40px;
         font: normal normal 300 22px/33px Poppins;

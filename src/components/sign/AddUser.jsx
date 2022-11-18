@@ -18,32 +18,38 @@ const AddUser = () => {
     navigate("/todo");
   }
 
-  function uploadImage(e) {
-    const files = e.target.files[0];
-    setImage(files.name);
-  }
-
   return (
     <div className="main_container">
       <div className="userContainer">
         <div className="userContainer_mini">
           <h1 className="second_title">Get Started</h1>
-          <div className="user_photo_container">
-            <div className="add_photo">add a photo</div>
-            <div className="photo_background">
-              <label htmlFor="fileInput">
-                <img src={image ? image : UserPhoto} alt="" />
+          {!image ? (
+            <div className="user_photo_container">
+              <label className="add_photo" htmlFor="fileInput">
+                add a photo
+                <div className="photo_background">
+                  <img src={UserPhoto} alt="" />
+                </div>
               </label>
+              <input
+                className="upload_input"
+                type="file"
+                name="file"
+                id="fileInput"
+                style={{ display: "none" }}
+                onChange={(e) => {
+                  if (e.target.files[0].size > 5000000) {
+                    window.alert("ფოტოს არ უნდა იყოს 5MB_ზე მეტი");
+                  } else setImage(e.target.files[0]);
+                  console.log(e.target.files[0]);
+                }}
+              />
             </div>
-            <input
-              className="upload_input"
-              type="file"
-              name="file"
-              id="fileInput"
-              onChange={uploadImage}
-              style={{ display: "none" }}
-            />
-          </div>
+          ) : (
+            <div className="selected_photo">
+              <img src={URL.createObjectURL(image)} alt="not fount" />
+            </div>
+          )}
           <div className="input_fill">fill in you name</div>
           <input
             value={enteredName}

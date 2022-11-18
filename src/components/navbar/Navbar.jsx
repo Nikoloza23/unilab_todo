@@ -7,6 +7,7 @@ const Navbar = () => {
   const userName = localStorage.getItem("joinedUsername");
   const userProfile = localStorage.getItem("joinedUserProfile");
 
+  console.log(userProfile)
   if (!userName && !userProfile) {
     return <Navigate to={"/sign"} />;
   }
@@ -16,7 +17,7 @@ const Navbar = () => {
       <h1>TO DO</h1>
       <div className="navbar_right_side">
         <div>{userName ? userName : "YourName"}</div>
-        <img src={joinedProfile} alt="" />
+        <img src={userProfile[Object]} alt="" />
       </div>
     </div>
   );
